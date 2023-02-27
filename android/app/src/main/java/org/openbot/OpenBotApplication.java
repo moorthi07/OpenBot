@@ -24,7 +24,7 @@ public class OpenBotApplication extends Application {
     context = getApplicationContext();
 
     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-    int baudRate = Integer.parseInt(sharedPreferences.getString("baud_rate", "115200"));
+    int baudRate = Integer.parseInt(sharedPreferences.getString("baud_rate", "9600")); //change back to 115200
     vehicle = new Vehicle(this, baudRate);
     vehicle.connectUsb();
     if (BuildConfig.DEBUG) {

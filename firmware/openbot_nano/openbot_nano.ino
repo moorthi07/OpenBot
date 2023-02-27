@@ -110,10 +110,18 @@ const float ADC_FACTOR = 5.0 / 1023;
 #define SONAR_MEDIAN 0
 #define HAS_SPEED_SENSORS_FRONT 0
 #define HAS_OLED 0
+//const int PIN_PWM_L1 = 5;
+//const int PIN_PWM_L2 = 6;
+//const int PIN_PWM_R1 = 9;
+//const int PIN_PWM_R2 = 10;
+
+
 const int PIN_PWM_L1 = 5;
-const int PIN_PWM_L2 = 6;
-const int PIN_PWM_R1 = 9;
-const int PIN_PWM_R2 = 10;
+const int PIN_PWM_L2 = 10;
+const int PIN_PWM_R1 = 6;
+const int PIN_PWM_R2 = 9;
+
+
 const int PIN_SPEED_LF = 2;
 const int PIN_SPEED_RF = 3;
 const int PIN_VIN = A7;
@@ -516,6 +524,8 @@ unsigned long display_time = 0;
 //------------------------------------------------------//
 void setup()
 {
+  //...
+    Serial.print("out:mm " );
 #if (OPENBOT == LITE)
   coast_mode = !coast_mode;
 #endif
@@ -1316,9 +1326,15 @@ void on_serial_rx()
     switch (msgPart)
     {
       case HEADER:
+      
+    //...
+    Serial.print("yes:1 ");
         process_header(inChar);
         return;
       case BODY:
+      
+    //...
+    Serial.print("yes:2 ");
         process_body(inChar);
         return;
     }

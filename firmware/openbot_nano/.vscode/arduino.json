@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:uno",
+    "programmer": "arduino:arduinoasispatmega32u4",
+    "port": "/dev/tty.usbmodem14101",
+    "sketch": "chevakan-test.ino"
+}

@@ -20,10 +20,11 @@ android {
     defaultConfig {
         applicationId "org.openbot"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a'
         }
+        setProperty("archivesBaseName", "imOpenBot")
     }
     buildTypes {
         release {

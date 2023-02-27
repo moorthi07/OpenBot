@@ -78,7 +78,8 @@
             android:enabled="true"
             android:launchMode="singleTask" />
 
-        <service android:name="net.majorkernelpanic.streaming.rtsp.RtspServer"/>
+<!--        <service android:name="net.majorkernelpanic.streaming.rtsp.RtspServer"/>-->
+<!--        <service android:name="com.pedro.rtspserver"/>-->
 
         <provider
             android:name="androidx.core.content.FileProvider"

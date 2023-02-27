@@ -160,7 +160,7 @@ public class UsbConnection {
 
   private void onSerialDataReceived(String data) {
     // Add whatever you want here
-    LOGGER.i("Serial data received: " + data);
+    LOGGER.i("Serial data received <: " + data);
     localBroadcastManager.sendBroadcast(
         new Intent(Constants.USB_ACTION_DATA_RECEIVED)
             .putExtra("from", "usb")
@@ -195,6 +195,7 @@ public class UsbConnection {
       busy = true;
       serialDevice.write(msg.getBytes(UTF_8));
       busy = false;
+      LOGGER.i("Serial data sent > : " + msg);
     }
   }
 
