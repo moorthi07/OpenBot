@@ -450,10 +450,8 @@ public abstract class CameraActivity extends AppCompatActivity
     IntentFilter localIntentFilter = new IntentFilter();
     localIntentFilter.addAction(Constants.USB_ACTION_DATA_RECEIVED);
     localBroadcastManager = LocalBroadcastManager.getInstance(this);
-//    localBroadcastManager.registerReceiver(localBroadcastReceiver, localIntentFilter);
+    localBroadcastManager.registerReceiver(localBroadcastReceiver, localIntentFilter);
     vehicle.requestVehicleConfig();
-
-    vehicle.sendControl(); // remove pv test
   }
 
   @SuppressLint("SetTextI18n")

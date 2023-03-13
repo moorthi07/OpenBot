@@ -406,8 +406,7 @@ public class Vehicle {
     // raw control value is used
     if (noiseEnabled && noise.getDirection() > 0)
       right = (int) ((control.getRight() - noise.getValue()) * speedMultiplier);
-//    sendStringToUsb(String.format(Locale.US, "c%d,%d\n", left, right));
-    sendStringToUsb(String.format(Locale.US,"1"));
+    sendStringToUsb(String.format(Locale.US, "c%d,%d\n", left, right));
   }
 
   protected void sendHeartbeat(int timeout_ms) {

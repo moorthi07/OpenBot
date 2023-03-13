@@ -14,12 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import org.openbot.R;
 import org.openbot.common.FeatureList;
 import org.openbot.databinding.FragmentMainBinding;
-import org.openbot.env.IDataReceived;
 import org.openbot.model.SubCategory;
 import org.openbot.original.DefaultActivity;
-
-import java.nio.charset.StandardCharsets;
-
 import timber.log.Timber;
 
 public class MainFragment extends Fragment implements OnItemClickListener<SubCategory> {
@@ -36,7 +32,7 @@ public class MainFragment extends Fragment implements OnItemClickListener<SubCat
     binding = FragmentMainBinding.inflate(inflater, container, false);
     return binding.getRoot();
   }
-  private IDataReceived dataReceivedCallback;
+
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
@@ -44,11 +40,6 @@ public class MainFragment extends Fragment implements OnItemClickListener<SubCat
     mViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
     binding.list.setLayoutManager(new LinearLayoutManager(requireContext()));
     binding.list.setAdapter(new CategoryAdapter(FeatureList.getCategories(), this));
-// Remove PV TEST
-    String commandStr = "{driveCmd: {l:0.2,r:-0.2}}";
-//    String commandStr = new String(payload.asBytes(), StandardCharsets.UTF_8);
-    dataReceivedCallback.dataReceived(commandStr);
-
   }
 
   @Override
